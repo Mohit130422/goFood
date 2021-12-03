@@ -9,7 +9,7 @@ const UserInput = (props) => {
     return (
         <View style={{marginBottom:12}}>
             <TextInput
-                style={hasFocus ? styles.focusInputStyle:styles.inputStyle}
+                style={[hasFocus ? styles.focusInputStyle:styles.inputStyle, props.style]}
                 placeholder={props.placeholder}
                 placeholderTextColor={props.placeholderTextColor}
                 onChangeText={props.onChangeText}
@@ -26,11 +26,13 @@ const UserInput = (props) => {
 const styles = StyleSheet.create({
     inputStyle:{
        borderBottomWidth:1,
-       borderBottomColor:Colors.black
+       borderBottomColor:Colors.black,
+       marginTop:10
     },
     focusInputStyle:{
        borderBottomWidth:1,
-       borderBottomColor:Colors.ColorPrimary
+       borderBottomColor:Colors.ColorPrimary,
+       marginTop:10
     }
 });
 
